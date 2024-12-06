@@ -26,6 +26,7 @@ ia Hey what its linux.
 ```
 #### New
 ![usage](pics/example2.png)
+![usage](pics/example3.png)
 
 #### Old
 ![usage](pics/example.png)
