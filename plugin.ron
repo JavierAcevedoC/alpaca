@@ -1,0 +1,13 @@
+(
+    name: "Alpaca a connector with your local LLM",
+    description: "Use your LLM running ollama",
+    query: (
+        regex: "^(ia )+(\\w|\\s)+\\.$",
+        help: "ia ",
+        priority: High,
+        isolate: true,
+    ),
+    bin: (path: "alpaca"),
+    icon: Name("text-x-generic"),
+    history: true,
+)
