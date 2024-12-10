@@ -10,4 +10,5 @@
     bin: (path: "alpaca"),
     icon: Name("text-x-generic"),
     history: true,
+    persistent: true,
 )
