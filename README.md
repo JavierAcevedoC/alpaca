@@ -22,11 +22,8 @@ go build alpaca.go
 To keep the sentences relative to words and not chars. you have to add a dot at the end of every sentence.
 
 ```sh 
-ia Hey what its linux.
+ia what its cthulhu.
 ```
 #### New
-![usage](pics/example2.png)
-![usage](pics/example3.png)
-
-#### Old
-![usage](pics/example.png)
+![usage](pics/example4.png)
+![usage](pics/example5.png)
