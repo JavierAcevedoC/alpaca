@@ -28,3 +28,4 @@ ia what its cthulhu.
 ![usage](pics/example3.png)
 ![usage](pics/example4.png)
 ![usage](pics/example5.png)
+![usage](pics/example2.png)
