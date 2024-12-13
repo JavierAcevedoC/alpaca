@@ -31,9 +31,10 @@ func AskLLM(search string) string {
 	resp, err := client.Do(req)
 
 	if err != nil {
-		fmt.Println("Error realizando la solicitud:", err)
-		return "Error on request"
+		fmt.Println("Error on request:", err)
+		return err.Error()
 	}
+
 	defer resp.Body.Close()
 
 	return cleanAndFormatting(resp.Body)
@@ -50,15 +51,15 @@ func gotKnowledge(search string) (*http.Request, bool, string) {
 	body, err := json.Marshal(requestBody)
 
 	if err != nil {
-		fmt.Println("Error serializando la solicitud:", err)
-		return nil, true, "Error serialization"
+		fmt.Println("Error serialization:", err)
+		return nil, true, err.Error()
 	}
 
 	req, err := http.NewRequest("POST", local_url, bytes.NewBuffer(body))
 
 	if err != nil {
-		fmt.Println("Error creando la solicitud:", err)
-		return nil, true, "Error creating request"
+		fmt.Println("Error creating request:", err)
+		return nil, true, err.Error()
 	}
 
 	req.Header.Set("Content-Type", "application/json")
