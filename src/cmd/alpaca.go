@@ -1,6 +1,7 @@
 package main
 
 import (
+	"alpaca/src/internal/data"
 	"alpaca/src/internal/llm"
 	"bufio"
 	"encoding/json"
@@ -27,7 +28,7 @@ type SearchResult struct {
 	Description string            `json:"description"`
 	Keywords    []string          `json:"keywords"`
 	Icon        *IconSource       `json:"icon"`
-	Exec        *string           `json:"exec"`
+	Exec        string            `json:"exec"`
 	Window      *WindowGeneration `json:"window"`
 }
 
@@ -58,9 +59,12 @@ func generateResponse() {
 		out := llm.AskLLM(req.Search)
 
 		fmt.Println(string(Clear)) //clear pop-launcher ui list
+
 		resp := Response{
 			Append: SearchResult{Name: out, Icon: &IconSource{Name: "text-x-generic"}},
 		}
+
+		data.CreateFileAndSave(out)
 
 		respBytes, _ := json.Marshal(resp)
 		fmt.Println(string(respBytes))

@@ -25,5 +25,6 @@ To keep the sentences relative to words and not chars. you have to add a dot at 
 ia what its cthulhu.
 ```
 #### New
+![usage](pics/example3.png)
 ![usage](pics/example4.png)
 ![usage](pics/example5.png)
